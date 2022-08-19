@@ -1,0 +1,54 @@
+INSERT INTO `clientes` (`idCliente`, `nombreCliente`, `apellidoCliente`, `fechaNacCliente`, `pesoCliente`, `alturaCliente`, `domicilioCliente`, `codigoPostal`, `movilCliente`, `movil2Cliente`, `emaliCliente`) VALUES ('1', 'lucas', 'forchino', '24/01/1979', '95,50', '1,60', 'jujuy 1234', '7600', '2236121212', '223445545', 'lucas@gmail.com'), ('2', 'jorge', 'solis', '01/10/1945', '78,20', '1,80', 'alma fuerte 321', '8000', '2291614593', '2291614593', 'j@hotmail.com'), ('3', 'javier', 'fernandez', '02/09/1945', '90,00', '1,77', 'av.paso 100', '7600', '2235444444', '22354444445', 'javier@gmail.com'), ('23', 'jorge', 'solisa', '01/01/1982', '100,00', '1,80', 'av.colon 4444', '7600', '22351666666', '223516666667', 'sol@gmail.com'), ('35', 'juan', 'mercado', '02/02/1964', '89,60', '1,77', 'av.independencia720', '7600', '2236166744', '2236166745', 'mercado@gmailcom');
+
+	QUERY 1
+
+SELECT 
+  `clientes`.`idCliente`,
+  `clientes`.`nombreCliente`,
+  `clientes`.`apellidoCliente`,
+  `clientes`.`fechaNacCliente`,
+  `clientes`.`pesoCliente`,
+  `clientes`.`alturaCliente`,
+  `clientes`.`domicilioCliente`,
+  `clientes`.`codigoPostal`,
+  `clientes`.`movilCliente`,
+  `clientes`.`movil2Cliente`,
+  `clientes`.`emaliCliente`
+FROM
+  `clientes`
+WHERE
+  `clientes`.`alturaCliente` >=1.78 and
+  `clientes`.`pesoCliente` >=90 
+
+	QUERY 2
+
+SELECT 
+  `clientes`.`idCliente`,
+  `clientes`.`nombreCliente`,
+  `clientes`.`apellidoCliente`,
+  `clientes`.`fechaNacCliente`,
+  `clientes`.`pesoCliente`,
+  `clientes`.`alturaCliente`,
+  `clientes`.`domicilioCliente`,
+  `clientes`.`codigoPostal`,
+  `clientes`.`movilCliente`,
+  `clientes`.`movil2Cliente`,
+  `clientes`.`emaliCliente`
+FROM
+  `clientes`
+WHERE
+  `clientes`. `codigoPostal` !=7600 and
+  `clientes`. `emaliCliente` != "@gmail.com"
+
+
+	QUERY 3
+
+SELECT AVG(`clientes`.`alturaCliente`) AS promedio FROM `clientes`;
+
+	QUERY 4
+
+SELECT MAX(`clientes`.`pesoCliente`) AS pesomax FROM `clientes`;
+
+	QUERY 5
+
+SELECT MIN(`clientes`.`fechaNacCliente`) AS minimo FROM `clientes`;
